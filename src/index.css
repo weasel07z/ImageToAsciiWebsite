@@ -4,9 +4,11 @@
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
+  --accent: #578ab362;
+  --TextAccent: #71afe2;
+  --accent-bg: rgba(59, 65, 255, 0.1);
+  --accent-bg-light: rgba(59, 88, 255, 0.08);
+  --accent-border: rgba(59, 88, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
@@ -37,9 +39,9 @@
     --bg: #16171d;
     --border: #2e303a;
     --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
+    --accent: #578ab362;
+    --accent-bg: rgba(132, 138, 252, 0.15);
+    --accent-border: rgba(117, 119, 204, 0.5);
     --social-bg: rgba(47, 48, 58, 0.5);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
@@ -74,6 +76,7 @@ h2 {
 h1 {
   font-size: 80px;
   letter-spacing: -1.68px;
+  user-select: none;
   margin: 64px;
   font-weight: bold;
   @media (max-width: 1024px) {
@@ -88,8 +91,10 @@ h1 {
 h2 {
   font-size: 40px;
   line-height: 118%;
-  letter-spacing: -0.24px;
+  letter-spacing: 2px;
+  user-select: none;
   margin: 0 0 8px; 
+  font-weight: bold;
   @media (max-width: 1024px) {
     font-size: 30px;
   }
@@ -102,7 +107,7 @@ h2 {
   justify-content: center;
   align-items: stretch;
   gap: 20px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 8px;
   box-sizing: border-box;
   @media (max-width: 1024px) {
@@ -117,14 +122,11 @@ img {
 .image-container {
   flex: 1;
   min-width: 0;
-  border: 3px solid var(--border);
+  border: 3px solid var(--accent);
   border-radius: 8px;
   @media (max-width: 1024px) {
-    width: 100%;
+    width: 1;
   }
-}
-.file{
-  margin-bottom: 20px;
 }
 
 pre {
@@ -142,8 +144,8 @@ pre {
 
 .ascii pre {
   flex: 1;
-  overflow: auto;
-  padding: 10px;
+  overflow: hidden;
+  margin: 10px 0 20px;
 }
 
 .uploaded-img {
@@ -155,10 +157,79 @@ pre {
 .file {
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 15px 20px 10px;
   border-radius: 4px;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--border);
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
+  background-color: var(--code-bg);
+}
+
+button {
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background-color: var(--code-bg);
+  font-weight: bold;
+  letter-spacing:1px;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: var(--accent-bg);
+  border-color: var(--accent-border);
+}
+
+.file:hover {
+  background-color: var(--accent-bg);
+  border-color: var(--accent-border);
+}
+
+.image-container h2 {
+  margin-top:10px;
+}
+
+h1:active, h2:active {
+  color: var(--TextAccent);
+  transition: color 0.3s ease;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.item {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  margin: 20px;
+  padding: 20px;
+  border: 3px solid var(--accent);
+  border-radius: 8px;
+}
+
+.selected {
+  background-color: var(--accent-bg);
+  border-color: var(--accent-border);
+}
+
+.item:hover {
+  background-color: var(--accent-bg-light);
+  border-color: var(--accent-border);
+  cursor: pointer;
+}
+.selected:hover {
+  background-color: var(--accent-bg);
+  border-color: var(--accent-border);
+  cursor: default;
 }
