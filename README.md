@@ -3,7 +3,7 @@ Converts images and videos to different sets of ascii characters.
 Choose a file to upload and then select the grayscale that you want and the ascii image should be displayed. 
 
 idk heres mimikyu
-
+[Pokémon_Mimikyu_art_Ascii(1).txt](https://github.com/user-attachments/files/26197773/Pokemon_Mimikyu_art_Ascii.1.txt)
                                                            ░░░                                                    
                                                         ░░░░░                                                     
                                                      ░░░░░░░░                                                     
