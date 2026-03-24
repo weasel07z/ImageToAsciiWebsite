@@ -18,8 +18,8 @@ function App() {
     
     img.onload = () => {
       const imgContainer = imgRef.current;
-      const cols = Math.floor(0.279855072464 * imgContainer.width); // 0.279855072464 was manually calculated to make the ascii art match the original image dimensions as closely as possible
-      const rows = Math.floor(cols * (img.height / img.width) * 0.6);
+      const cols = Math.max(10,Math.floor(0.279855072464 * imgContainer.clientWidth)); // 0.279855072464 was manually calculated to make the ascii art match the original image dimensions as closely as possible
+      const rows = Math.max(10,Math.floor(cols * (img.height / img.width) * 0.6));
       
       console.log(imgContainer.width, imgContainer.height);
 
@@ -62,8 +62,8 @@ function App() {
         return;
       }
 
-      const cols = Math.floor(0.279855072464 * video.clientWidth); // 0.279855072464 was manually calculated to make the ascii art match the original image dimensions as closely as possible
-      const rows = Math.floor(cols * (video.videoHeight / video.videoWidth) * 0.6);
+      const cols = Math.max(10, Math.floor(0.279855072464 * video.clientWidth)); // 0.279855072464 was manually calculated to make the ascii art match the original image dimensions as closely as possible
+      const rows = Math.max(10, Math.floor(cols * (video.videoHeight / video.videoWidth) * 0.6));
       canvas.width = cols;
       canvas.height = rows;
       ctx.drawImage(video, 0, 0, cols, rows);
@@ -146,7 +146,7 @@ function App() {
         const file = new File([blob], 'bad_apple_video.mp4', { type: 'video/mp4' });
         setUploadedFile(file);
         setFileUrl(URL.createObjectURL(file));
-        setTimeout(() => processImage(file), 50);
+        requestAnimationFrame(()=> processVideo(file));
       });
   }, []);
 
