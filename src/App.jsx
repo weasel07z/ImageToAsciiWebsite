@@ -3,7 +3,7 @@ import './App.css'
 
 function App() {
   const [uploadedFile, setUploadedFile] = useState(null);
-  const defaultImageURL = '/bad_apple_video.mp4';
+  const defaultImageURL = import.meta.env.BASE_URL + 'bad_apple_video.mp4';
   const [fileUrl, setFileUrl] = useState(defaultImageURL);
   const [ascii, setaAscii] = useState('');
   const [gscale, setGscale] = useState('█▓@&%$#8X/*!;:=~^,_:-.` ');
