@@ -74,17 +74,18 @@ h2 {
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 90px;
   letter-spacing: -1.68px;
+  line-height: 118%;
   user-select: none;
-  margin: 64px;
+  margin: 40px 0 20px;
   font-weight: bold;
   @media (max-width: 1024px) {
-    font-size: 53px;
+    font-size: 60px;
     margin: 64px 10px;
   }
   @media(max-width: 600px) {
-    font-size: 40px;
+    font-size: 50px;
     margin: 64px 10px;
   }
 }
@@ -202,6 +203,7 @@ h1:active, h2:active {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 10px;
+  margin-top:20px;
 }
 
 .item {
