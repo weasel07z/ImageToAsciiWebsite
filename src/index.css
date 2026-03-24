@@ -181,6 +181,7 @@ button {
 button:hover {
   background-color: var(--accent-bg);
   border-color: var(--accent-border);
+  cursor: pointer;
 }
 
 .file:hover {
